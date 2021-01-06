@@ -76,23 +76,17 @@ const Todos = () => {
                       onClick={() => deleteHandle(todo)}
                       className="fas fa-trash-alt"
                     ></i>
-                    {/* <button onClick={() => deleteHandle(todo)}>x</button> */}
                   </div>
                 </div>
               ))}
-              <Form onFinish={submitHandle}>
-                <Form.Item name="description">
-                  <Input placeholder="Add todo" />
-                </Form.Item>
-                <Button block type="primary" htmlType="submit">
-                  Add
-                </Button>
-              </Form>
             </>
           ) : (
             <>
               <h1>You have no todos yet</h1>
-              <Form onFinish={submitHandle}>
+              
+            </>
+          )}
+          <Form onFinish={submitHandle}>
                 <Form.Item name="description">
                   <Input placeholder="Add todo" />
                 </Form.Item>
@@ -100,20 +94,10 @@ const Todos = () => {
                   Add
                 </Button>
               </Form>
-            </>
-          )}
         </>
       ) : (
         <h1>Log in to manage your todos!</h1>
       )}
-      {/* <Form onFinish={submitHandle}>
-        <Form.Item name="description">
-          <Input placeholder="Add todo" />
-        </Form.Item>
-        <Button block type="primary" htmlType="submit">
-          Add
-        </Button>
-      </Form> */}
     </div>
   )
 }
