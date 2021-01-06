@@ -7,7 +7,6 @@ const { Header, Content, Footer } = Layout
 
 const AppLayout = ({ children }) => {
   const { user, logout } = useContextInfo()
-  console.log("user log from App Layout: ", user)
   const handleLogout = () => {
     logoutService()
     logout()
