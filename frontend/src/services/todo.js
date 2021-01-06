@@ -3,7 +3,7 @@ let baseURL;
 
 process.env.NODE_ENV === 'production'
   ? (baseURL = '')
-  : (baseURL = 'http://localhost:3000/todo');
+  : (baseURL = 'http://localhost:3000');
 
 const service = axios.create({ withCredentials: true, baseURL });
 
