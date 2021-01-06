@@ -22,7 +22,8 @@ exports.deleteTodo = async (req, res) => {
   res.status(200).json({ message: "Todo deleted successfully" })
 }
 exports.getTodos = async (req, res) => {
-  const todos = await Todo.find()
+  const {_id} = req.user
+  const todos = await Todo.find({createdBy: _id})
   res.status(200).json(todos)
 }
 exports.getTodo = async (req, res) => {
@@ -34,11 +35,14 @@ exports.getTodo = async (req, res) => {
 exports.isCompleted = async (req, res) => {
   const { id, completed } = req.body
   console.log(id, completed)
-  const isCompleted = await Todo.findByIdAndUpdate(id, {
-    completed: !completed
-  },
-  {
-    new: true,
-  })
+  const isCompleted = await Todo.findByIdAndUpdate(
+    id,
+    {
+      completed: !completed,
+    },
+    {
+      new: true,
+    }
+  )
   res.status(200).json(isCompleted)
 }

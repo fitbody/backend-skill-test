@@ -60,7 +60,7 @@ const Todos = () => {
         <>
           {todos.length > 0 ? (
             <>
-            <h1>Pending tasks</h1>
+              <h1>Pending tasks</h1>
               {todos.map((todo) => (
                 <div className="todo-element" key={todo._id}>
                   <Link to={`/todo/${todo._id}`}>
@@ -72,22 +72,35 @@ const Todos = () => {
                       onClick={() => isCheckedHandle(todo._id, todo.completed)}
                       onChange={onChangeHandle}
                     />
-                    <i onClick={() => deleteHandle(todo)} className="fas fa-trash-alt"></i>
+                    <i
+                      onClick={() => deleteHandle(todo)}
+                      className="fas fa-trash-alt"
+                    ></i>
                     {/* <button onClick={() => deleteHandle(todo)}>x</button> */}
                   </div>
                 </div>
               ))}
               <Form onFinish={submitHandle}>
-        <Form.Item name="description">
-          <Input placeholder="Add todo" />
-        </Form.Item>
-        <Button block type="primary" htmlType="submit">
-          Add
-        </Button>
-      </Form>
+                <Form.Item name="description">
+                  <Input placeholder="Add todo" />
+                </Form.Item>
+                <Button block type="primary" htmlType="submit">
+                  Add
+                </Button>
+              </Form>
             </>
           ) : (
-            <h1>You have no todos yet</h1>
+            <>
+              <h1>You have no todos yet</h1>
+              <Form onFinish={submitHandle}>
+                <Form.Item name="description">
+                  <Input placeholder="Add todo" />
+                </Form.Item>
+                <Button block type="primary" htmlType="submit">
+                  Add
+                </Button>
+              </Form>
+            </>
           )}
         </>
       ) : (
