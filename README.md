@@ -52,7 +52,7 @@ You can complete the tasks in any order.
 ### Tools used:
 ### MERN Stack: MongoDb, ExpressJs and NodeJs for backend, ReactJs for frontend.
 
-### Instructions
+### Instructions:
 
 1. ##### Clone the repo.
 
@@ -66,6 +66,6 @@ You can complete the tasks in any order.
 
 6. ##### Command: “npm install” to install all the needed dependencies.
 
-7. ##### Run client with: “npm start”
+7. ##### Run client with: “npm start”.
 
 
