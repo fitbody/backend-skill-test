@@ -43,3 +43,25 @@ You can complete the tasks in any order.
 3. ##### Install the app locally.
 
 4. ##### Once you've completed your work, you can submit a pull-request to the remote repository.
+
+
+### Tools used:
+### MERN Stack: MongoDb, ExpressJs and NodeJs for backend, ReactJs for frontend
+
+### Instructions
+
+1. ##### Clone the repo
+
+2. ##### Cd /backend-skill-test/backend
+
+3. ##### Command: “npm install” to install all the needed dependencies
+
+4. ##### Run server with “npm run dev”
+
+5. ##### Cd /backend-skill-test/frontend
+
+6. ##### Command: “npm install” to install all the needed dependencies
+
+7. ##### Run client with: “npm start”
+
+
