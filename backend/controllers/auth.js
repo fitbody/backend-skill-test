@@ -1,5 +1,4 @@
 const User = require("../models/User")
-const passport = require("../config/passport")
 
 exports.signup = async (req, res) => {
   User.register(req.body, req.body.password)

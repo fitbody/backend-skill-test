@@ -1,9 +1,9 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Form, Input, Button, Checkbox } from "antd"
 import { UserOutlined, LockOutlined } from "@ant-design/icons"
 import { loginService } from "../services/auth"
 import { useContextInfo } from "../hooks/context"
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom"
 
 const Login = ({ history }) => {
   const { login, user } = useContextInfo()
@@ -50,11 +50,10 @@ const Login = ({ history }) => {
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        <br/>
-        Or 
-        <br/>
-        <Link to='/signup'>register now!</Link>
-    
+        <br />
+        Or
+        <br />
+        <Link to="/signup">register now!</Link>
       </Form.Item>
     </Form>
   )

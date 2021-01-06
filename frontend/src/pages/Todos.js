@@ -83,17 +83,16 @@ const Todos = () => {
           ) : (
             <>
               <h1>You have no todos yet</h1>
-              
             </>
           )}
           <Form onFinish={submitHandle}>
-                <Form.Item name="description">
-                  <Input placeholder="Add todo" />
-                </Form.Item>
-                <Button block type="primary" htmlType="submit">
-                  Add
-                </Button>
-              </Form>
+            <Form.Item name="description">
+              <Input placeholder="Add todo" />
+            </Form.Item>
+            <Button block type="primary" htmlType="submit">
+              Add
+            </Button>
+          </Form>
         </>
       ) : (
         <h1>Log in to manage your todos!</h1>
