@@ -21,7 +21,9 @@ const Todos = () => {
     getTodosFunc()
   }, [])
   const submitHandle = (value) => {
-    createService(value)
+    if (!value.description)
+      return toast.error("Please provide a description for your task!")
+    createService(value.description)
       .then((res) => {
         setTodos((todos) => [...todos, res.data])
         toast.success("Todo added sucessfully!")
@@ -45,14 +47,10 @@ const Todos = () => {
     console.log(id, completed)
     isCompletedService({ id, completed })
       .then((res) => {
-        // console.log(todos)
-        // console.log(res.data)
         setTodos(todos.filter((todo) => todo._id !== res.data._id))
-       
         setTodos((todos) => [...todos, res.data])
-
-    })
-    .catch((err) => console.log(err))
+      })
+      .catch((err) => console.log(err))
   }
   return (
     <>
