@@ -6,7 +6,6 @@ function TodoInfo({ match }) {
   useEffect(() => {
     async function getWorkoutsFunction() {
       const { data } = await todoService(match.params.id)
-      console.log(data)
       setTodo(data)
     }
     getWorkoutsFunction()
@@ -17,7 +16,12 @@ function TodoInfo({ match }) {
         <>
           <h3>Info from todo with id: </h3>
           <h4>{todo._id}</h4>
-          <h5>{todo.description}</h5>
+          <h5>{todo.description} </h5>
+          {todo.completed ? (
+              <h5>This task has been completed!</h5>
+          ): (
+              <h5>This task has not been completed yet!</h5>
+          )}
         </>
       ) : (
         ""
