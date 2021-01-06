@@ -13,6 +13,8 @@ const Signup = ({ history }) => {
   }
 
   return (
+   <>
+   <br/>
     <Form
       name="normal_login"
       className="login-form"
@@ -45,6 +47,7 @@ const Signup = ({ history }) => {
         </Button>
       </Form.Item>
     </Form>
+   </>
   )
 }
 
