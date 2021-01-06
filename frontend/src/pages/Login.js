@@ -1,16 +1,21 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Form, Input, Button, Checkbox } from "antd"
 import { UserOutlined, LockOutlined } from "@ant-design/icons"
 import { loginService } from "../services/auth"
 import { useContextInfo } from "../hooks/context"
 
 const Login = ({ history }) => {
-  const { login } = useContextInfo()
+  const { login, user } = useContextInfo()
+  if (user)
+  history.push('/')
   const loginHandle = async ({ email, password }) => {
     await loginService({ email, password })
     history.push("/")
     login(email)
   }
+
+ 
+  
 
   return (
     <Form

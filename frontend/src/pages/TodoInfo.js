@@ -11,12 +11,11 @@ function TodoInfo({ match }) {
     getWorkoutsFunction()
   }, [])
   return (
-    <>
+    <div className='container'>
       {todo ? (
         <>
-          <h3>Info from todo with id: </h3>
-          <h4>{todo._id}</h4>
-          <h5>{todo.description} </h5>
+          <h3>Task: </h3>
+          <h4>{todo.description} </h4>
           {todo.completed ? (
               <h5>This task has been completed!</h5>
           ): (
@@ -26,7 +25,7 @@ function TodoInfo({ match }) {
       ) : (
         ""
       )}
-    </>
+    </div>
   )
 }
 

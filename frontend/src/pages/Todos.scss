@@ -1,0 +1,19 @@
+.todo-element {
+  width: 75vw;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 25rem;
+  margin: 0 auto;
+  padding: 0.2rem 3rem;
+  .fa-trash-alt {
+      margin: 0 .5rem
+  }
+}
+.container {
+  max-width: 60rem;
+  margin: 1rem auto;
+  padding: 0 15rem;
+}

@@ -2,12 +2,16 @@ import React from "react"
 import { Form, Input, Button, Checkbox } from "antd"
 import { UserOutlined, LockOutlined } from "@ant-design/icons"
 import { signupService } from "../services/auth"
+import { useContextInfo } from "../hooks/context"
 
 const Signup = ({ history }) => {
+  const { user } = useContextInfo()
+  if (user) history.push("/")
   const handleSignup = async (userInput) => {
     await signupService(userInput)
     history.push("/login")
   }
+  
 
   return (
     <Form

@@ -2,8 +2,10 @@ const Todo = require("../models/Todo")
 
 exports.createTodo = async (req, res) => {
   const { description } = req.body
-  if (!description || description === "")
-    res.status(500).json({ err: "Please provide a description!" })
+
+  console.log(description)
+  if (!description)
+    return res.status(500).json({ err: "Please provide a description!" })
   const createdBy = req.user._id
   const todo = await Todo.create({
     createdBy,

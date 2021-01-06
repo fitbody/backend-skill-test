@@ -9,6 +9,7 @@ import { Link } from "react-router-dom"
 import { useContextInfo } from "../hooks/context"
 import { Form, Input, Button, Checkbox } from "antd"
 import { toast } from "react-toastify"
+import "./Todos.scss"
 
 const Todos = () => {
   const [todos, setTodos] = useState([])
@@ -23,7 +24,8 @@ const Todos = () => {
   const submitHandle = (value) => {
     if (!value.description)
       return toast.error("Please provide a description for your task!")
-    createService(value.description)
+    console.log(value.description)
+    createService(value)
       .then((res) => {
         setTodos((todos) => [...todos, res.data])
         toast.success("Todo added sucessfully!")
@@ -53,24 +55,36 @@ const Todos = () => {
       .catch((err) => console.log(err))
   }
   return (
-    <>
+    <div className="container">
       {user ? (
         <>
           {todos.length > 0 ? (
             <>
+            <h1>Pending tasks</h1>
               {todos.map((todo) => (
-                <div key={todo._id}>
+                <div className="todo-element" key={todo._id}>
                   <Link to={`/todo/${todo._id}`}>
                     <li>{todo.description}</li>
                   </Link>
-                  <Checkbox
-                    defaultChecked={todo.completed}
-                    onClick={() => isCheckedHandle(todo._id, todo.completed)}
-                    onChange={onChangeHandle}
-                  />
-                  <button onClick={() => deleteHandle(todo)}>x</button>
+                  <div>
+                    <Checkbox
+                      defaultChecked={todo.completed}
+                      onClick={() => isCheckedHandle(todo._id, todo.completed)}
+                      onChange={onChangeHandle}
+                    />
+                    <i onClick={() => deleteHandle(todo)} className="fas fa-trash-alt"></i>
+                    {/* <button onClick={() => deleteHandle(todo)}>x</button> */}
+                  </div>
                 </div>
               ))}
+              <Form onFinish={submitHandle}>
+        <Form.Item name="description">
+          <Input placeholder="Add todo" />
+        </Form.Item>
+        <Button block type="primary" htmlType="submit">
+          Add
+        </Button>
+      </Form>
             </>
           ) : (
             <h1>You have no todos yet</h1>
@@ -79,15 +93,15 @@ const Todos = () => {
       ) : (
         <h1>Log in to manage your todos!</h1>
       )}
-      <Form onFinish={submitHandle}>
+      {/* <Form onFinish={submitHandle}>
         <Form.Item name="description">
           <Input placeholder="Add todo" />
         </Form.Item>
         <Button block type="primary" htmlType="submit">
           Add
         </Button>
-      </Form>
-    </>
+      </Form> */}
+    </div>
   )
 }
 
