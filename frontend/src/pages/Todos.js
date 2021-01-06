@@ -45,10 +45,14 @@ const Todos = () => {
     console.log(id, completed)
     isCompletedService({ id, completed })
       .then((res) => {
-        console.log("ASDADAS")
-        console.log(res.data)
-      })
-      .catch((err) => console.log(err))
+        // console.log(todos)
+        // console.log(res.data)
+        setTodos(todos.filter((todo) => todo._id !== res.data._id))
+       
+        setTodos((todos) => [...todos, res.data])
+
+    })
+    .catch((err) => console.log(err))
   }
   return (
     <>

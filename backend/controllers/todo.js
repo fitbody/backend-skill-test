@@ -35,6 +35,9 @@ exports.isCompleted = async (req, res) => {
   console.log(id, completed)
   const isCompleted = await Todo.findByIdAndUpdate(id, {
     completed: !completed
+  },
+  {
+    new: true,
   })
   res.status(200).json(isCompleted)
 }
