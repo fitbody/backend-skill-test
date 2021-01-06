@@ -47,23 +47,24 @@ You can complete the tasks in any order.
 
 ---------------------------------------------------------------------------------------------------------------------
 
+# Challenge done
 
 ### Tools used:
-### MERN Stack: MongoDb, ExpressJs and NodeJs for backend, ReactJs for frontend
+### MERN Stack: MongoDb, ExpressJs and NodeJs for backend, ReactJs for frontend.
 
 ### Instructions
 
-1. ##### Clone the repo
+1. ##### Clone the repo.
 
-2. ##### Cd /backend-skill-test/backend
+2. ##### Cd /backend-skill-test/backend.
 
-3. ##### Command: “npm install” to install all the needed dependencies
+3. ##### Command: “npm install” to install all the needed dependencies.
 
-4. ##### Run server with “npm run dev”
+4. ##### Run server with “npm run dev”.
 
-5. ##### Cd /backend-skill-test/frontend
+5. ##### Cd /backend-skill-test/frontend.
 
-6. ##### Command: “npm install” to install all the needed dependencies
+6. ##### Command: “npm install” to install all the needed dependencies.
 
 7. ##### Run client with: “npm start”
 
