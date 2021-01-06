@@ -17,7 +17,7 @@ function TodoInfo({ match }) {
           <h3>Task: </h3>
           <h4>{todo.description} </h4>
           {todo.completed ? (
-              <h5>This task has been completed!</h5>
+              <h5>This task has been completed. One less thing to worry about!</h5>
           ): (
               <h5>This task has not been completed yet!</h5>
           )}

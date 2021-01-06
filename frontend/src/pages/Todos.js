@@ -63,7 +63,7 @@ const Todos = () => {
               <h1>Pending tasks</h1>
               {todos.map((todo) => (
                 <div className="todo-element" key={todo._id}>
-                  <Link to={`/todo/${todo._id}`}>
+                  <Link to={`/to-do/${todo._id}`}>
                     <li>{todo.description}</li>
                   </Link>
                   <div>

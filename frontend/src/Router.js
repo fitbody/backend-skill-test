@@ -14,7 +14,7 @@ const Router = () => (
         <Route exact={true} path="/" component={Todos} />
         <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
-          <Route exact path="/todo/:id" component={TodoInfo} />
+          <Route exact path="/to-do/:id" component={TodoInfo} />
         <Route component={NotFound} />
       </Switch>
     </AppLayout>
