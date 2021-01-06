@@ -8,6 +8,7 @@ import {
 import { Link } from "react-router-dom"
 import { useContextInfo } from "../hooks/context"
 import { Form, Input, Button, Checkbox } from "antd"
+import { toast } from "react-toastify"
 
 const Todos = () => {
   const [todos, setTodos] = useState([])
@@ -23,6 +24,7 @@ const Todos = () => {
     createService(value)
       .then((res) => {
         setTodos((todos) => [...todos, res.data])
+        toast.success("Todo added sucessfully!")
       })
       .catch((err) => console.log(err))
   }
@@ -30,20 +32,22 @@ const Todos = () => {
   const deleteHandle = (value) => {
     deleteService(value)
       .then((res) => {
-        console.log("todo deleted:D")
         setTodos(todos.filter((todo) => todo._id !== value._id))
+        toast.warning("Todo deleted sucessfully!")
       })
       .catch((err) => console.log("error!"))
   }
   const onChangeHandle = (e) => {
-    //   console.log(id, completed)
     console.log(`checked = ${e.target.checked}`)
   }
 
   const isCheckedHandle = (id, completed) => {
     console.log(id, completed)
-    isCompletedService({id, completed})
-      .then((res) => console.log(res))
+    isCompletedService({ id, completed })
+      .then((res) => {
+        console.log("ASDADAS")
+        console.log(res.data)
+      })
       .catch((err) => console.log(err))
   }
   return (

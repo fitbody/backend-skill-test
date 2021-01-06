@@ -1,6 +1,5 @@
 import React from "react"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import Home from "./components/home/Home"
 import NotFound from "./components/404/NotFound.js"
 import AppLayout from "./pages/AppLayout"
 import Todos from './pages/Todos'
