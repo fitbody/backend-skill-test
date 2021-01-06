@@ -22,7 +22,6 @@ exports.deleteTodo = async (req, res) => {
   res.status(200).json({ message: "Todo deleted successfully" })
 }
 exports.getTodos = async (req, res) => {
-  const { _id } = req.user
   const todos = await Todo.find()
   res.status(200).json(todos)
 }

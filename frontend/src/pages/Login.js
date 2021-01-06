@@ -3,19 +3,16 @@ import { Form, Input, Button, Checkbox } from "antd"
 import { UserOutlined, LockOutlined } from "@ant-design/icons"
 import { loginService } from "../services/auth"
 import { useContextInfo } from "../hooks/context"
+import {Link} from 'react-router-dom'
 
 const Login = ({ history }) => {
   const { login, user } = useContextInfo()
-  if (user)
-  history.push('/')
+  if (user) history.push("/")
   const loginHandle = async ({ email, password }) => {
     await loginService({ email, password })
     history.push("/")
     login(email)
   }
-
- 
-  
 
   return (
     <Form
@@ -47,17 +44,17 @@ const Login = ({ history }) => {
         <Form.Item name="remember" valuePropName="checked" noStyle>
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
-
-        <a className="login-form-forgot" href="">
-          Forgot password
-        </a>
       </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        Or <a href="">register now!</a>
+        <br/>
+        Or 
+        <br/>
+        <Link to='/signup'>register now!</Link>
+    
       </Form.Item>
     </Form>
   )

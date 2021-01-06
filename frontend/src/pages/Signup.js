@@ -44,7 +44,6 @@ const Signup = ({ history }) => {
         <Button type="primary" htmlType="submit" className="login-form-button">
           Signup
         </Button>
-        Or <a href="">Login with Google!</a>
       </Form.Item>
     </Form>
   )

@@ -7,6 +7,7 @@ import "antd/dist/antd.css"
 import { ContextProvider } from "./hooks/context"
 import { ToastContainer, Slide } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import './index.css'
 
 ReactDOM.render(
   <>
