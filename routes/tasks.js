@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const {
   tasksGet,
+  taskGet,
   tasksPost,
-  tasksPut,
   tasksDelete,
   tasksPatch,
 } = require("../controllers/tasks");
@@ -11,8 +11,8 @@ const route = Router();
 
 route.get("/", tasksGet);
 route.post("/", tasksPost);
-route.put("/", tasksPut);
-route.delete("/", tasksDelete);
-route.patch("/", tasksPatch);
+route.get("/:id", taskGet);
+route.delete("/:id", tasksDelete);
+route.patch("/:id", tasksPatch);
 
 module.exports = route;
