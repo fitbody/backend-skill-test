@@ -1,17 +1,19 @@
 const express = require("express");
 const cors = require("cors");
+// const dbConnection = require("../db/db");
 
 class Server {
   constructor() {
     this.app = express();
     this.port = process.env.PORT || 8080;
-    this.tasksPath = '/api/tasks'
+    this.tasksPath = "/api/tasks";
     this.middleware();
     this.routers();
   }
 
   middleware() {
     this.app.use(cors());
+    this.app.use(express.json());
     this.app.use(express.static("public"));
   }
 
