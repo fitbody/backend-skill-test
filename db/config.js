@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("taksdb", "admin", "password", {
+const sequelize = new Sequelize("db", "admin", "password", {
   dialect: "sqlite",
-  storage: "db/task-db.sqlite",
+  storage: "db/db.sqlite",
 });
 sequelize
   .authenticate()

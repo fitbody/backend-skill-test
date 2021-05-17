@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
-// const dbConnection = require("../db/db");
+
 
 class Server {
   constructor() {
     this.app = express();
     this.port = process.env.PORT || 8080;
     this.tasksPath = "/api/tasks";
+    this.usersPath = "/api/users";
     this.middleware();
     this.routers();
   }
@@ -19,6 +20,7 @@ class Server {
 
   routers() {
     this.app.use(this.tasksPath, require("../routes/tasks"));
+    this.app.use(this.usersPath, require("../routes/users"));
   }
 
   listen() {
