@@ -4,7 +4,7 @@
   "description": "Pruba Técnica de Backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "express-validator": "^6.11.1",
+    "nodemon": "^2.0.7",
     "sequelize": "^6.6.2",
     "sqlite3": "^5.0.2"
   },
