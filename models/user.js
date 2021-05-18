@@ -1,29 +1,34 @@
-const Sequelize = require("Sequelize");
-const sequelize = require("../db/config");
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../db/db");
 
-const User = sequelize.define("user", {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  name: {
-    type: Sequelize.STRING,
-    allowNull: true,
-    validate: {
-      notEmpty: true,
+class User extends Model {}
+User.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    email: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: true,
+      validate: {
+        notEmpty: true,
+      },
     },
   },
-  email: {
-    type: Sequelize.STRING,
-    unique: true,
-    allowNull: true,
-    validate: {
-      notEmpty: true,
-    },
-  },
-});
-
-// User.hasMany
+  {
+    sequelize,
+    modelName: "user",
+  }
+);
 
 module.exports = User;

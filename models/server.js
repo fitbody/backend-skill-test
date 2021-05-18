@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-
+const sequelize = require("../db/db");
+require("../db/associations");
 
 class Server {
   constructor() {
@@ -15,6 +16,7 @@ class Server {
   middleware() {
     this.app.use(cors());
     this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: false }));
     this.app.use(express.static("public"));
   }
 
@@ -26,6 +28,14 @@ class Server {
   listen() {
     this.app.listen(this.port, () => {
       console.log("Server on port", this.port);
+      sequelize
+        .sync({ force: false })
+        .then(() => {
+          console.log("Connection sqlite has been established successfully.");
+        })
+        .catch((err) => {
+          console.error("Unable to connect to the database:", err);
+        });
     });
   }
 }

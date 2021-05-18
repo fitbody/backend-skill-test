@@ -1,32 +1,39 @@
-const Sequelize = require("Sequelize");
-const sequelize = require("../db/config");
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../db/db");
 
-const Task = sequelize.define("task", {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  description: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      notEmpty: true,
+class Task extends Model {}
+Task.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
-  },
-  done: {
-    type: Sequelize.BOOLEAN,
-    allowNull: false,
-    defaultValue: false,
-    validate: {
-      notEmpty: true,
-      isBoolean: (val) => {
-        if (typeof val !== "boolean") {
-          throw new Error("Not boolean.");
-        }
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    done: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+      validate: {
+        notEmpty: true,
+        isBoolean: (val) => {
+          if (typeof val !== "boolean") {
+            throw new Error("Not boolean.");
+          }
+        },
       },
     },
   },
-});
+  {
+    sequelize,
+    modelName: "task",
+  }
+);
 
 module.exports = Task;
