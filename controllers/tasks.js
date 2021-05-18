@@ -11,7 +11,7 @@ const tasksGet = (req, res, next) => {
 };
 
 const taskGet = (req, res, next) => {
-  Tasks.findOne({ where: { id: req.params.id } })
+  Tasks.findByPk(req.params.id)
     .then((result) => res.json(result))
     .catch((err) => {
       res.status(412).json({
@@ -31,7 +31,7 @@ const tasksPost = (req, res, next) => {
 };
 
 const tasksDelete = (req, res, next) => {
-  Tasks.destroy({ where: { id: req.params.id } })
+  Tasks.destroy({ where: { task_id: req.params.id } })
     .then(() => {
       res.json({ message: `Task id ${req.params.id} delete` });
     })

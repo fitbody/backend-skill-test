@@ -1,7 +1,14 @@
 const Users = require("../models/user.js");
+const Tasks = require("../models/tasks");
 
 const usersGet = (req, res, next) => {
-  Users.findAll({})
+  Users.findAll({
+    include: [
+      {
+        model: Tasks,
+      },
+    ],
+  })
     .then((result) => res.json(result))
     .catch((err) => {
       res.status(412).json({
@@ -11,7 +18,14 @@ const usersGet = (req, res, next) => {
 };
 
 const userGet = (req, res, next) => {
-  Users.findOne({ where: { id: req.params.id } })
+  Users.findOne({
+    where: { id: req.params.id },
+    include: [
+      {
+        model: Tasks,
+      },
+    ],
+  })
     .then((result) => res.json(result))
     .catch((err) => {
       res.status(412).json({
