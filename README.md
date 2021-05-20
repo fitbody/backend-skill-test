@@ -1,3 +1,47 @@
+# Prueba Técnica FITbody
+
+Prueba técnica para FITbody Backend
+
+## Comenzando 🚀
+
+### Pre-requisitos 📋
+
+node.js, si aun no lo tienes puedes instalardo [aquí](https://nodejs.org/es/download/)
+git, si aun no lo tienes puedes instalardo [aquí](https://git-scm.com/)
+
+### Instalación 🔧
+
+Descarga este repositorio y ejecuta los siguientes comandos
+
+```bash
+$ git clone https://github.com/DanielGoycochea/backend-skill-test
+$ cd backend-skill-test
+$ npm install
+$ npm run dev
+```
+
+## Creado con🛠️
+
+- [express.js](https://expressjs.com/) - Express es una infraestructura de aplicaciones web Node.js
+- [sequelize](https://sequelize.org/) - Sequelize es un ORM para Postgres, MySQL, MariaDB, SQLite y Microsoft SQL Server.
+- [sqlite](https://www.sqlite.org//) - SQLite es una biblioteca de lenguaje C que implementa un motor de base de datos SQL
+
+## Enpoints
+
+| Method | Path           | Parametros       | Descripción                |
+| ------ | -------------- | ---------------- | -------------------------- |
+| GET    | /api/users     |                  | Obtiene todos los usuarios |
+| GET    | /api/users/:id |                  | Obtiene un usuario         |
+| POST   | /api/users     | name             | Crea usuario               |
+| PATCH  | api/users/:id  |                  | Actualiza usuario          |
+| DELETE | api/users/:id  |                  | Elimina usuarios           |
+| GET    | /api/tasks     |                  | Obtiene todos las tareas   |
+| GET    | /api/tasks/:id |                  | Obtiene una tarea          |
+| POST   | /api/tasks     | descrpcion, done | Crea tarea                 |
+| PATCH  | api/tasks/:id  |                  | Actualiza tarea            |
+| DELETE | api/tasks/:id  |                  | Elimina tarea              |
+
+
 # Backend challenge
 
 # TODO APP
