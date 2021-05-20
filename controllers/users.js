@@ -2,13 +2,7 @@ const Users = require("../models/user.js");
 const Tasks = require("../models/tasks");
 
 const usersGet = (req, res, next) => {
-  Users.findAll({
-    include: [
-      {
-        model: Tasks,
-      },
-    ],
-  })
+  Users.findAll({})
     .then((result) => res.json(result))
     .catch((err) => {
       res.status(412).json({
