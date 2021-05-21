@@ -37,7 +37,7 @@ $ npm run dev
 | DELETE | api/users/:id  |                  | Elimina usuarios           |
 | GET    | /api/tasks     |                  | Obtiene todos las tareas   |
 | GET    | /api/tasks/:id |                  | Obtiene una tarea          |
-| POST   | /api/tasks     | descrpcion, done | Crea tarea                 |
+| POST   | /api/tasks     | descrpcion, done, idUser | Crea tarea                 |
 | PATCH  | api/tasks/:id  |                  | Actualiza tarea            |
 | DELETE | api/tasks/:id  |                  | Elimina tarea              |
 

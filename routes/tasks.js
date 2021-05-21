@@ -16,6 +16,7 @@ route.post(
   "/",
   [
     check("description", "description is required").not().isEmpty(),
+    check("userId", "userId is required").not().isEmpty(),
     validateFields,
   ],
   tasksPost
